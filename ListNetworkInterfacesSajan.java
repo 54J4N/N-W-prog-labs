@@ -6,12 +6,12 @@ import java.util.Enumeration;
 public class ListNetworkInterfacesSajan {
     public static void main(String[] args) {
         try {
-
             Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
 
             while (interfaces.hasMoreElements()) {
                 NetworkInterface networkInterface = interfaces.nextElement();
-                System.out.println("Network Interface: " + networkInterface.getDisplayName());
+                System.out.println("Network Interface (Display Name): " + networkInterface.getDisplayName());
+                System.out.println("System Name (Use in getByName): " + networkInterface.getName());
 
                 Enumeration<InetAddress> ipAddresses = networkInterface.getInetAddresses();
                 while (ipAddresses.hasMoreElements()) {
